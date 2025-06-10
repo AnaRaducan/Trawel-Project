@@ -1,0 +1,47 @@
+.header {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  
+}
+
+.nav-bar {
+  background-color: rgba(255, 255, 255, 0.1); /* alb semi-transparent */
+  backdrop-filter: blur(4px); /* opțional: estompează fundalul */
+  /* z-index: 2; */
+  border: 1px solid rgba(255, 255, 255, 0.656);
+
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px 40px;
+  margin: 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.5);
+}
+
