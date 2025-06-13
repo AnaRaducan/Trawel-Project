@@ -3,7 +3,7 @@ import "./footer.css";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="footer-top">
         <h2>Let's explore the world together 🌏</h2>
         <p>Follow us on your favorite platforms and never miss a destination update.</p>

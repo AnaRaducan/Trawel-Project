@@ -1,9 +1,8 @@
-import './App.css';
-import Header from './components/header';
-import TrawelCard from './components/trawelCard';
-import TopDestinations from './components/topDestinations';
-import Footer from './components/footer';
-
+import "./App.css";
+import Header from "./components/header";
+import TrawelCard from "./components/trawelCard";
+import TopDestinations from "./components/topDestinations";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
       <Header />
       <TopDestinations />
       <TrawelCard />
-      <Footer /> 
+      <Footer />
     </div>
   );
 }

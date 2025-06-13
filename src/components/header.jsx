@@ -12,8 +12,8 @@ function Header() {
         <div className="logo">Trawel</div>
         <nav className="nav">
           <a href="#">Home</a>
-          <a href="#">Destinations</a>
-          <a href="#">About</a>
+          <a href="#destination">Destinations</a>
+          <a href="#footer">About</a>
           <a href="#">Contact</a>
         </nav>
       </div>

@@ -13,7 +13,19 @@ import img14 from "../img/img14.jpg";
 import starIcon from "../icons/star.png";
 import heartIcon from "../icons/heart.png";
 
+import React, { useState } from "react";
+
 function TrawelCard() {
+  const [modalImg, setModalImg] = useState(null);
+
+  const openModal = (imgSrc) => {
+    setModalImg(imgSrc);
+  };
+
+  const closeModal = () => {
+    setModalImg(null);
+  };
+
   const locations = [
     { name: "Scotland", img: img1 },
     { name: "Tropical Retreat", img: img2 },
@@ -26,7 +38,7 @@ function TrawelCard() {
   ];
 
   return (
-    <section className="destination-section">
+    <section className="destination-section" id="destination" >
       <div className="destination-intro">
         <h2>Explore Popular Destinations 🌍</h2>
         <p>
@@ -36,23 +48,35 @@ function TrawelCard() {
       </div>
 
       <div className="grid-container">
-        {locations.map((place, i) => (
-          <div className="card" key={i}>
-            <img className="dimension-img" src={place.img} alt={place.name} />
-            <img className="heart-icon" src={heartIcon} alt="favorite" />
-            <div className="icons--star">
-              <h3>{place.name}</h3>
-              <p>New</p>
-              <img className="icon--dimension" src={starIcon} alt="icon star" />
-            </div>
-            <div className="description__img">
-              <p>{(10 + i * 5).toFixed(1)} kilometers away</p>
-              <p>17-19 July</p>
-            </div>
-            <p><strong>{(70000 + i * 3000).toLocaleString()}</strong> night</p>
-          </div>
-        ))}
+  {locations.map((place, i) => (
+    <div className="card zoom-effect" key={i}>
+      <img
+        className="dimension-img"
+        src={place.img}
+        alt={place.name}
+        onClick={() => openModal(place.img)}
+      />
+      <img className="heart-icon" src={heartIcon} alt="favorite" />
+      <div className="icons--star">
+        <h3>{place.name}</h3>
+        <p>New</p>
+        <img className="icon--dimension" src={starIcon} alt="icon star" />
       </div>
+      <div className="description__img">
+        <p>{(10 + i * 5).toFixed(1)} kilometers away</p>
+        <p>17-19 July</p>
+      </div>
+      <p><strong>{(70000 + i * 3000).toLocaleString()}</strong> night</p>
+    </div>
+  ))}
+</div>
+
+      {modalImg && (
+        <div className="modal" onClick={closeModal}>
+          <span className="close">&times;</span>
+          <img className="modal-content" src={modalImg} alt="Zoomed Destination" />
+        </div>
+      )}
     </section>
   );
 }
